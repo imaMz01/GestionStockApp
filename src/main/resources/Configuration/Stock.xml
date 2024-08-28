@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       
+       <bean id="Stock" class="GestionStocks.entities.Stock"></bean>
+       
+       <bean id="StockServiceImp" class="GestionStocks.service.StockServiceImp">
+       		<property name="stocks">
+       			<list></list>
+       		</property>
+       </bean>
+       
+       <bean id="StockController" class="GestionStocks.Controller.StockController">
+       		<property name="stc" ref="StockServiceImp"></property>
+       </bean>
+</beans>
